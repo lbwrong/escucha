@@ -1,0 +1,115 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Escucha 拍摄指南（一人 + 两台设备）</title>
+<style>
+body{font-family:system-ui,"Microsoft YaHei",sans-serif;background:#111;color:#eee;margin:0;padding:14px;max-width:900px;margin:auto}
+h1{font-size:22px;margin:6px 0}.top{color:#aaa;font-size:14px;line-height:1.6;background:#1a1a1a;border-radius:12px;padding:10px 14px}
+.card{background:#1c1c1c;border:2px solid #333;border-radius:16px;margin:16px 0;padding:14px}
+.card.done{border-color:#2e7d32;opacity:.75}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.hd h2{font-size:20px;margin:0}.hd small{color:#999;font-weight:normal}
+.ok{font-size:16px;display:flex;align-items:center;gap:6px;white-space:nowrap;background:#262626;padding:8px 12px;border-radius:10px;cursor:pointer}
+.ok input{width:22px;height:22px}
+ol{padding-left:26px;margin:10px 0}li{margin:10px 0;font-size:17px;line-height:1.5}
+.ex{display:block;color:#888;font-size:13px}
+.say{color:#ffd54f}.see{color:#80cbc4}
+button.play{display:block;width:100%;margin:6px 0;padding:14px;border-radius:12px;border:2px solid #4a6;background:#233;color:#eee;text-align:left;font-size:16px;cursor:pointer}
+button.play.star{border-color:#f5a623;background:#3a2a10}button.play.playing{background:#1e5631}
+.es{display:block;font-size:21px}.zh{display:block;color:#bbb;font-size:14px}
+details{margin-top:6px;color:#aaa;font-size:14px}summary{cursor:pointer}
+#stop{position:fixed;right:14px;bottom:14px;padding:14px 20px;border-radius:30px;background:#7a1e1e;color:#fff;border:0;font-size:16px}
+</style></head><body>
+<h1>Escucha 拍摄指南</h1>
+<div class="top">设备 A＝iPhone 跑 Escucha；设备 B＝这台电脑（打开本页），放在桌子对面“医生的位置”，扬声器朝 iPhone 底部麦克风，距离 50–80 cm，音量 60–70%，关掉电脑通知声。<br>
+每个镜头单独拍一条（拍不好就重拍这一条）。图标：📷机位 📱点手机 🗣你说 ▶点播放医生 ⏱等待 👀应该看到。<br>
+<span style="color:#888">（每段开拍前点“结束”清空上一段，再重新“开始”，免得旧内容跑进纪要。）</span></div>
+<div id="list"></div>
+<button id="stop">■ 停止播放</button>
+<script>
+const C=(f,es,zh,star)=>({t:'clip',f,es,zh,star});
+const S=[
+{n:1,title:'痛点：别的软件“聋了”',time:'0:00–0:10',steps:[
+['📷','第三部手机/支架侧面 45° 拍桌上：左边一部手机开着普通翻译软件（品牌打码），你的手。','这条拍的是“别的软件”，不是 Escucha。'],
+['📱','在那款普通翻译软件里说一句中文，让它开始朗读西语。','要趁它“正在朗读”时插话。'],
+['⏱','它开始朗读约 1 秒后，点下面按钮。',''],
+C('01_alergico.mp3','Perdone, ¿es alérgico a algún medicamento?','不好意思，您对什么药过敏吗？'),
+['👀','那款软件屏幕上没有出现任何新字。','证明别的软件朗读时听不见对方。']],
+vo:'我住在西班牙，不会说西语。我试过的翻译软件都有同一个问题：它一开口朗读，就听不见对方了。'},
+{n:2,title:'后果 + 片名',time:'0:10–0:20',steps:[
+['📷','不用拍新素材：剪辑时定格镜头 1 最后没反应的屏幕。',''],
+['✂️','加红字“漏听 ✗”；然后黑屏出 Logo“Escucha — 朗读时也在听”。','全部在剪辑软件里做。']],
+vo:'看医生的时候，漏掉一句话，可能就是漏掉一种过敏药。所以我做了 Escucha——西语‘听’的意思。'},
+{n:3,title:'我说话，开始朗读',time:'0:20–0:40',steps:[
+['📱','⚙︎ 设置：普通模式；语言 中⇄西；“朗读我的话给对方”开；“朗读对方的话给我”关；场合 日常。',''],
+['📷','打开 iPhone 屏幕录制（长按开麦克风）；另一部手机拍你的手，剪辑时放右下角小窗。','屏幕录制和外部机位分开录，开拍时拍一下手，方便对齐。'],
+['📱','点中间“开始”。',''],
+['🗣','<span class=say>「你好，我最近三天一直头疼，晚上也睡不好，想请医生帮我看一下。」</span>','离手机约 30 cm，正常偏慢的语速。'],
+['👀','<span class=see>字幕出现，Escucha 开始用西语朗读这句。</span>','']],
+vo:'我说中文，它马上翻成西语读给对方听。'},
+{n:4,title:'★关键：朗读中插话（全双工）',time:'0:40–1:05',steps:[
+['📱','设置同镜头 3；点“结束”清空，再点“开始”。',''],
+['⏱','点“开始”后等 3 秒。','让识别和说话人标签准备好。'],
+['🗣','<span class=say>「你好，我最近三天一直头疼，晚上也睡不好，想请医生帮我看一下。」</span>','先让 Escucha 有一句要朗读。'],
+['⏱','听到 iPhone 开始朗读西语约 1 秒时，马上点橙色按钮。','插话必须落在朗读“正在进行”时，不要等它读完。两边声音同时响是正常的，这就是要演示的。'],
+C('04_tiene_fiebre.mp3','Vale, vale. ¿Tiene fiebre también?','好的好的，您也发烧吗？',1),
+['👀','<span class=see>朗读声音变小；屏幕同时出现中文大字“好的好的，您也发烧吗？”和小字西语；约 1.5 秒后朗读音量恢复。</span>','剪辑时加字“朗读降到 30%”。这条多拍 3–5 遍，挑字幕最快的一条，保持原速不加速。']],
+vo:'对方随时插话，它照样听、照样翻，朗读声音自动让路。这就是全双工。'},
+{n:5,title:'回声不会被当成对方的话',time:'1:05–1:20',steps:[
+['📱','可接着镜头 4 继续拍（不点结束），或重新“开始”。',''],
+['🗣','<span class=say>「没有发烧，就是头疼。」</span>',''],
+['👀','<span class=see>Escucha 朗读西语时，屏幕上没有把自己的朗读又显示成“对方说的话”。</span>','剪辑时放大字幕区，让评委看清。']],
+vo:'手机自己读出来的声音会被过滤掉，不会被当成对方又说了一遍。'},
+{n:6,title:'对坐俯拍 + 医生自我介绍',time:'1:20–1:35',steps:[
+['📱','点“对坐”。场合留“日常”（想保险就提前在 ⚙︎ 选“看医生”）；朗读我的话 开，朗读对方的话 关。','演示 AI 自动切到“看医生”；没自动切就用备用设置。'],
+['📷','iPhone 平放桌子中间，上半屏朝电脑（医生那边）；支架正上方俯拍。电脑旁放“Dra. García”名牌/听诊器当“医生”。','不拍医生的手，对面那台电脑 + 道具就代表医生。防反光：避开头顶灯。'],
+['📱','点“开始”。',''],['⏱','等 3 秒。','名字标签要准备 1–2 秒。'],
+C('06_doctora_garcia.mp3','Buenos días. Soy la doctora García. ¿Qué le pasa?','早上好，我是 García 医生。您哪里不舒服？'),
+['👀','<span class=see>上半屏西语、下半屏中文；说话人标签由“对方”变成“García 医生”。</span>','标签可能晚 1–1.5 秒出现，别急着停。剪辑时把标签圈出来。']],
+vo:'对坐模式：手机放在中间，两边各看自己的语言。Meta 的语音模型听出这是另一个人，听到自我介绍后，标签自动变成‘García 医生’。'},
+{n:7,title:'医生开药 + 点建议回复',time:'1:35–1:50',steps:[
+['📱','接着镜头 6 继续（不点结束），机位不变。','要用前面的对话上下文。'],
+C('07a_ibuprofeno.mp3','Le voy a recetar ibuprofeno, seiscientos miligramos, cada ocho horas, durante cinco días.','我给您开布洛芬，600 毫克，每 8 小时一次，吃 5 天。'),
+['👀','<span class=see>小清单自动加上“布洛芬 600mg，每 8 小时，5 天”。</span>',''],
+['📱','点输入框 → 出现 2–3 条建议 → 点一条，例如「饭前吃还是饭后吃？」→ 发送。','建议是 AI 根据整场对话给的，内容可能略不同，挑意思相近的。'],
+['👀','<span class=see>这句被朗读成西语。</span>',''],
+['⏱','朗读完后点：',''],
+C('07b_despues_de_comer.mp3','Después de comer, siempre con algo en el estómago.','饭后吃，胃里一定要有东西。')],
+vo:'每听一句，AI 结合整场对话给出建议回复，点一下就能问，已经问过的不会重复。'},
+{n:8,title:'结束 → 还没问',time:'1:50–2:02',steps:[
+['📱','接着镜头 7 继续。先播医生的告别：',''],
+C('08a_ya_esta.mp3','Bueno, pues ya está. Adiós.','好了，就这样，再见。'),
+['📱','点“结束”。',''],
+['👀','<span class=see>弹出“还没问”，例如“需要复诊吗？”“有什么副作用要注意？”，每条带现成西语问题。</span>',''],
+['📱','点一条（如“需要复诊吗？”）。',''],
+['👀','<span class=see>手机朗读「¿Tengo que volver a la consulta?」（我需要再来复诊吗？）</span>',''],
+['⏱','朗读完后点：',''],
+C('08b_volver_cita.mp3','Si en una semana sigue igual, pida cita otra vez.','如果一周后还这样，再预约。')],
+vo:'结束前，它会提醒这个场合重要但还没问的事，点一下就替我问。'},
+{n:9,title:'纪要',time:'2:02–2:10',steps:[
+['📱','打开纪要页。',''],
+['👀','<span class=see>总结 + 待办（“布洛芬 600mg 每 8 小时饭后，5 天”“一周不好转再预约”）。</span>',''],
+['📱','点“加到日历”，再点“复制”。','']],
+vo:'最后，Meta 的 Muse Spark 在约 1.3 秒内写好中文纪要和待办。'},
+{n:10,title:'无障碍（快切，每个约 6 秒）',time:'2:10–2:30',steps:[
+['📷','iPhone 屏幕录制即可。',''],
+['📱','A：⚙︎ 打开两个朗读开关。','剪辑加字“看不见：双向语音”。'],
+['📱','B：两个朗读开关都关，展示大字幕。','剪辑加字“听不见：纯字幕”。'],
+['📱','C：在输入框打字「我听不见，请写下来」→ 发送。','剪辑加字“不能说话：打字让它读”。'],
+['👀','<span class=see>C 这句被朗读成西语。</span>',''],
+['📱','（可选 1 秒）点右上角语言按钮切到 英⇄法。','说明任意两种语言都行。']],
+vo:'看不见，就双向朗读；听不见，就纯字幕；不能说话，就打字让它读。语言也不限于中西，任意两种都行。'},
+{n:11,title:'架构 + Meta',time:'2:30–2:50',steps:[
+['🖥','不用拍手机：在 PPT/Keynote 做一页架构图（内容见分镜脚本镜头 11）。','Soniox 识别+翻译+朗读；Meta 语音模型分说话人；Muse Spark 写纪要。']],
+vo:'同一路声音并行送两处：Soniox 负责边听边翻和朗读，因为 Meta 目前没有语音合成；Meta 的语音模型负责分清谁在说话；Muse Spark 负责纪要。任何一处出错都会自动降级，对话不中断。'},
+{n:12,title:'数字收尾',time:'2:50–3:00',steps:[
+['🖥','做一张大字数字卡：建议回复 0.5–0.7 s；纪要 P50 1.34 s；说话人标签句末后约 1–1.5 s；打字翻译 0.09–0.14 s；目标 ≤2 s。最后 Logo + 你的网址。','≤2 s 只写“目标”，因为还没在 iPhone 上实测整段延迟。']],
+vo:'Escucha：它在说话的时候，也在听你说话。'}];
+let a=new Audio(),cur=null;
+function play(b){if(cur===b&&!a.paused){a.pause();b.classList.remove('playing');return}a.pause();cur&&cur.classList.remove('playing');a=new Audio(b.dataset.f);a.play();cur=b;b.classList.add('playing');a.onended=()=>b.classList.remove('playing')}
+const L=document.getElementById('list');
+S.forEach(s=>{const k='escucha-done-'+s.n,d=localStorage.getItem(k)==='1';
+const li=s.steps.map(x=>x.t==='clip'?`<li style="list-style:none;margin-left:-26px"><button class="play${x.star?' star':''}" data-f="${x.f}">▶ 医生${x.star?'（★插话）':''}：<span class=es>${x.es}</span><span class=zh>${x.zh}</span></button></li>`:`<li>${x[0]} ${x[1]}${x[2]?`<span class=ex>（${x[2]}）</span>`:''}</li>`).join('');
+L.insertAdjacentHTML('beforeend',`<div class="card${d?' done':''}" id="c${s.n}"><div class=hd><h2>镜头 ${s.n}｜${s.title} <small>${s.time}</small></h2><label class=ok><input type=checkbox ${d?'checked':''} data-k="${k}">拍好了</label></div><ol>${li}</ol><details><summary>旁白（之后单独录）</summary>「${s.vo}」</details></div>`)});
+document.querySelectorAll('button.play').forEach(b=>b.onclick=()=>play(b));
+document.querySelectorAll('.ok input').forEach(c=>c.onchange=()=>{localStorage.setItem(c.dataset.k,c.checked?'1':'0');c.closest('.card').classList.toggle('done',c.checked)});
+document.getElementById('stop').onclick=()=>{a.pause();cur&&cur.classList.remove('playing')};
+</script></body></html>

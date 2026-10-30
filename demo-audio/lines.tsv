@@ -1,0 +1,7 @@
+01_alergico	1	Perdone, ¿es alérgico a algún medicamento?	不好意思，您对什么药过敏吗？（开场：别的软件漏听）
+04_tiene_fiebre	4	Vale, vale. ¿Tiene fiebre también?	好的好的，您也发烧吗？（★插话镜头）
+06_doctora_garcia	6	Buenos días. Soy la doctora García. ¿Qué le pasa?	早上好，我是 García 医生。您哪里不舒服？
+07a_ibuprofeno	7	Le voy a recetar ibuprofeno, seiscientos miligramos, cada ocho horas, durante cinco días.	我给您开布洛芬，600 毫克，每 8 小时一次，吃 5 天。
+07b_despues_de_comer	7	Después de comer, siempre con algo en el estómago.	饭后吃，胃里一定要有东西。
+08a_ya_esta	8	Bueno, pues ya está. Adiós.	好了，就这样，再见。
+08b_volver_cita	8	Si en una semana sigue igual, pida cita otra vez.	如果一周后还这样，再预约。

@@ -1,0 +1,10 @@
+{"note": "示例数据 / sample data: a parent-teacher talk, written for the demo.",
+ "lines": [
+  {"speaker": "老师", "es": "Hola, buenas tardes. ¿Usted es el padre de Xinran?", "zh": "您好，下午好。您是欣然的爸爸吗？"},
+  {"speaker": "老师", "es": "Quería hablar con usted sobre la excursión del próximo viernes.", "zh": "我想跟您说一下下周五的郊游。", "pause": 0.4},
+  {"speaker": "老师", "es": "Necesitamos la autorización firmada antes del miércoles.", "zh": "我们需要在周三之前拿到签好字的同意书。", "pause": 0.3},
+  {"speaker": "老师", "es": "Los niños tienen que traer comida y agua, y ropa cómoda.", "zh": "孩子们要自带午饭和水，穿舒适的衣服。"},
+  {"speaker": "老师", "es": "El autobús sale a las nueve en punto desde la puerta principal.", "zh": "大巴九点整从学校正门出发。", "pause": 0.5},
+  {"speaker": "老师", "es": "Ah, y el precio son doce euros, se paga por la plataforma del colegio.", "zh": "对了，费用是 12 欧元，在学校平台上支付。"},
+  {"speaker": "老师", "es": "¿Tiene alguna pregunta?", "zh": "您还有什么问题吗？", "pause": 2}
+ ]}
