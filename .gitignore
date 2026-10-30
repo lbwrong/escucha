@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.log
+server.log
+demo-audio.zip
+*.zip
+*.tgz
+*.tar.gz
+node_modules/
+._*
+.DS_Store
+tests/screenshot.png
